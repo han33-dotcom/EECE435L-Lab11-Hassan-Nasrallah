@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="Hello World - Hassan Nasrallah" Language="1033"
+           Version="1.0.0" Manufacturer="Hassan Nasrallah"
+           UpgradeCode="{F4869713-BD0B-43B4-ABEF-F247CFDC7375}">
+    <Package InstallerVersion="500" Compressed="yes"
+             InstallScope="perUser" Platform="x64" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="LocalAppDataFolder">
+        <Directory Id="INSTALLFOLDER" Name="HelloWorld-Hassan-Nasrallah">
+          <Component Id="Executable" Guid="{3D34895F-ABA1-4B57-865E-E84DC31CD7C6}" Win64="yes">
+            <File Id="HelloWorldExe" Source="$(var.PayloadDir)\helloworld.exe" />
+            <RemoveFolder Id="RemoveInstallFolder" On="uninstall" />
+            <RegistryValue Root="HKCU" Key="Software\HassanNasrallah\HelloWorld"
+                           Name="Executable" Type="integer" Value="1" KeyPath="yes" />
+          </Component>
+          <Component Id="Readme" Guid="{1722A374-C68C-4D40-87F0-ED5CC7B6719A}" Win64="yes">
+            <File Id="ReadmeFile" Source="$(var.PayloadDir)\README.md" />
+            <RegistryValue Root="HKCU" Key="Software\HassanNasrallah\HelloWorld"
+                           Name="Readme" Type="integer" Value="1" KeyPath="yes" />
+          </Component>
+          <Component Id="UserGuide" Guid="{112BD804-078E-4E09-8550-8F583210868D}" Win64="yes">
+            <File Id="UserGuideFile" Source="$(var.PayloadDir)\user_guide.txt" />
+            <RegistryValue Root="HKCU" Key="Software\HassanNasrallah\HelloWorld"
+                           Name="UserGuide" Type="integer" Value="1" KeyPath="yes" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="Complete" Title="Hello World and documentation" Level="1">
+      <ComponentRef Id="Executable" />
+      <ComponentRef Id="Readme" />
+      <ComponentRef Id="UserGuide" />
+    </Feature>
+  </Product>
+</Wix>

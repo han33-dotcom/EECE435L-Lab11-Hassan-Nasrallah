@@ -1,0 +1,9 @@
+Package: helloworld-hassan-nasrallah
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Depends: libc6 (>= 2.34)
+Maintainer: Hassan Nasrallah <200389290+han33-dotcom@users.noreply.github.com>
+Description: Hello World console application for EECE435L
+ Prints a personalized greeting and includes a README and user guide.

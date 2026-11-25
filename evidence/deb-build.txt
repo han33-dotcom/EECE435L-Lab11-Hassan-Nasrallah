@@ -1,0 +1,32 @@
+Debian 12.15 | WSL 2 | amd64
+$ sh packaging/debian/build.sh
+gcc -std=c17 -O2 -Wall -Wextra -Werror -pedantic src/linux/helloworld.c
+dpkg-deb --build --root-owner-group <staging-directory> dist/helloworld_Hassan_Nasrallah.deb
+dpkg-deb: building package 'helloworld-hassan-nasrallah' in 'dist/helloworld_Hassan_Nasrallah.deb'.
+Built dist/helloworld_Hassan_Nasrallah.deb
+
+$ dpkg-deb --info dist/helloworld_Hassan_Nasrallah.deb
+ new Debian package, version 2.0.
+ size 4128 bytes: control archive=464 bytes.
+     338 bytes,     9 lines      control              
+ Package: helloworld-hassan-nasrallah
+ Version: 1.0.0
+ Section: utils
+ Priority: optional
+ Architecture: amd64
+ Depends: libc6 (>= 2.34)
+ Maintainer: Hassan Nasrallah <200389290+han33-dotcom@users.noreply.github.com>
+ Description: Hello World console application for EECE435L
+  Prints a personalized greeting and includes a README and user guide.
+
+$ dpkg-deb --contents dist/helloworld_Hassan_Nasrallah.deb
+drwxr-xr-x root/root         0 2026-11-25 16:03 ./
+drwxr-xr-x root/root         0 2026-11-25 16:03 ./usr/
+drwxr-xr-x root/root         0 2026-11-25 16:03 ./usr/local/
+drwxr-xr-x root/root         0 2026-11-25 16:03 ./usr/local/bin/
+-rwxr-xr-x root/root     15968 2026-11-25 16:03 ./usr/local/bin/helloworld
+drwxr-xr-x root/root         0 2026-11-25 16:03 ./usr/share/
+drwxr-xr-x root/root         0 2026-11-25 16:03 ./usr/share/doc/
+drwxr-xr-x root/root         0 2026-11-25 16:03 ./usr/share/doc/helloworld-hassan-nasrallah/
+-rw-r--r-- root/root      2619 2026-11-25 16:03 ./usr/share/doc/helloworld-hassan-nasrallah/README.md
+-rw-r--r-- root/root       680 2026-11-25 16:03 ./usr/share/doc/helloworld-hassan-nasrallah/user_guide.txt

@@ -1,0 +1,11 @@
+Windows x64 | MinGW-w64 and WiX Toolset
+PS> .\packaging\windows\build.ps1 -WixBin <WiX binaries>
+g++ -std=c++17 -O2 -Wall -Wextra -Werror -pedantic -static src/windows/helloworld.cpp
+candle.exe -arch x64 packaging/windows/HelloWorld.wxs
+HelloWorld.wxs
+light.exe -out dist/helloworld_Hassan_Nasrallah.msi HelloWorld.wixobj
+packaging\windows\HelloWorld.wxs(15) : warning LGHT1076 : ICE91: The file 'HelloWorldExe' will be installed to the per user directory 'INSTALLFOLDER' that doesn't vary based on ALLUSERS value. This file won't be copied to each user's profile even if a per machine installation is desired.
+packaging\windows\HelloWorld.wxs(21) : warning LGHT1076 : ICE91: The file 'ReadmeFile' will be installed to the per user directory 'INSTALLFOLDER' that doesn't vary based on ALLUSERS value. This file won't be copied to each user's profile even if a per machine installation is desired.
+packaging\windows\HelloWorld.wxs(26) : warning LGHT1076 : ICE91: The file 'UserGuideFile' will be installed to the per user directory 'INSTALLFOLDER' that doesn't vary based on ALLUSERS value. This file won't be copied to each user's profile even if a per machine installation is desired.
+Built dist/helloworld_Hassan_Nasrallah.msi
+MSI size: 69632 bytes

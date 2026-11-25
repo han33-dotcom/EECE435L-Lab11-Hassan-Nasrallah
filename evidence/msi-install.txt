@@ -1,0 +1,20 @@
+Windows 11 x64 | Windows Installer
+PS> msiexec.exe /i "dist\helloworld_Hassan_Nasrallah.msi" /qn /norestart
+Windows Installer exit code: 0
+
+MSI Property table
+ProductName      Hello World - Hassan Nasrallah
+ProductVersion   1.0.0
+Manufacturer     Hassan Nasrallah
+ProductCode      {F42704D8-204A-446B-99AE-D92A5940143E}
+UpgradeCode      {F4869713-BD0B-43B4-ABEF-F247CFDC7375}
+
+Windows Installed apps registration
+Product state:   5 (installed)
+Display name:    Hello World - Hassan Nasrallah
+Version:         1.0.0
+Publisher:       Hassan Nasrallah
+
+PS> & "$env:LOCALAPPDATA\HelloWorld-Hassan-Nasrallah\helloworld.exe"
+Hello, World from Hassan_Nasrallah!
+Verified the installed executable, README and user guide.

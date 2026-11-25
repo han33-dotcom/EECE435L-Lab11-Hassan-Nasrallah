@@ -1,0 +1,19 @@
+Debian 12.15 | WSL 2 | amd64
+$ dpkg -i dist/helloworld_Hassan_Nasrallah.deb
+Selecting previously unselected package helloworld-hassan-nasrallah.
+(Reading database ... 8558 files and directories currently installed.)
+Preparing to unpack .../helloworld_Hassan_Nasrallah.deb ...
+Unpacking helloworld-hassan-nasrallah (1.0.0) ...
+Setting up helloworld-hassan-nasrallah (1.0.0) ...
+
+$ dpkg -l helloworld-hassan-nasrallah
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                        Version      Architecture Description
++++-===========================-============-============-============================================
+ii  helloworld-hassan-nasrallah 1.0.0        amd64        Hello World console application for EECE435L
+
+$ /usr/local/bin/helloworld
+Hello, World from Hassan_Nasrallah!
+Verified the installed executable, README and user guide.

@@ -1,0 +1,20 @@
+Hello World - Hassan Nasrallah
+=============================
+
+This console application takes no arguments. It prints one line and exits.
+
+Windows x64
+1. Install helloworld_Hassan_Nasrallah.msi.
+2. Open PowerShell and run:
+   & "$env:LOCALAPPDATA\HelloWorld-Hassan-Nasrallah\helloworld.exe"
+3. To uninstall, open Settings > Apps > Installed apps, find
+   "Hello World - Hassan Nasrallah", and choose Uninstall.
+
+Debian amd64
+1. In the directory containing the package, run:
+   sudo apt install ./helloworld_Hassan_Nasrallah.deb
+2. Run: /usr/local/bin/helloworld
+3. To uninstall, run: sudo apt remove helloworld-hassan-nasrallah
+
+Expected output
+Hello, World from Hassan_Nasrallah!
